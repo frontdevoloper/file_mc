@@ -1,0 +1,24 @@
+{
+  "name": "client-mc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.7.1",
+    "pinia": "^2.1.6",
+    "popper.js": "^1.16.1",
+    "vee-validate": "^4.11.7",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "yup": "^1.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9"
+  }
+}
