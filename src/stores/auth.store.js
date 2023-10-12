@@ -1,11 +1,13 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
-import authService from '../services/auth.service';
+import authService from '../services/auth.service.js';
 import { useRouter } from 'vue-router';
+import { useTaskStore } from './task.store.js';
 
 
 export const useAuthStore = defineStore('auth', () => {
     const user = JSON.parse(localStorage.getItem('user'));
+    const taskStore = useTaskStore();
     const initialState = ref(user 
         ? { status: { loggedIn: true}, user } 
         : { status: { loggedIn: false }, user: null }
@@ -66,6 +68,7 @@ export const useAuthStore = defineStore('auth', () => {
 
     function logoutSuccess() {
         initialState.value.status.loggedIn = false;
+        taskStore.tasks = [];
         router.push('/login');
     }
 

@@ -1,5 +1,4 @@
 const API_URL = 'http://localhost:4000/api/auth/';
-import { fetchWrapper } from "../helpers/fetch-wrapper";
 
 class AuthService {
     async login(userData) {

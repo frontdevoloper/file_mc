@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView, useRouter } from 'vue-router';
-import { useAuthStore } from './stores/auth.store';
+import { useAuthStore } from './stores/auth.store.js';
 import { ref, computed, onMounted, onUpdated, watch, reactive } from 'vue';
 
 const authStore = useAuthStore();
@@ -17,10 +17,13 @@ const authStore = useAuthStore();
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link  class="nav-link active" aria-current="page" to="home">Главная</router-link>
+              <router-link  class="nav-link active" aria-current="page" to="/">Главная</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="userBoard">Представление</router-link>
+              <router-link class="nav-link" to="/userBoard">Представление</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/register">Регистрация</router-link>
             </li>
           </ul>            
         </div>
@@ -41,6 +44,10 @@ const authStore = useAuthStore();
 .logout-btn{
   display: none;
   transition: all .5s ease;
+}
+
+.admin-link {
+  margin-left: 1rem;
 }
 
 .logout-btn.active {
